@@ -1,6 +1,10 @@
 :root {
     --primary: #3C5;
     --secondary: #0A1;
+    --ternary: #7F7;
+    --accent: #F77;
+    --accent-light: #FAA;
+    --accent-dark: #F33;
 }
 
 * {
@@ -53,6 +57,8 @@
 
 .fruit-item img {
     width: 100%;
+    aspect-ratio: 1.2;
+    background-color: var(--ternary);
     border-radius: 7px 7px 0 0;
 }
 
@@ -82,4 +88,68 @@
     font-weight: 600;
     cursor: pointer;
     transition: 400ms;
+}
+
+.cart-toggle {
+    position: fixed;
+    bottom: min(5vmin, 30px);
+    left: min(5vmin, 30px);
+    width: clamp(5vmax, 75px, 150px);
+    aspect-ratio: 1;
+    box-sizing: border-box;
+    background-color: var(--primary);
+    border-radius: 100%;
+    cursor: pointer;
+}
+.cart-toggle:hover {
+    background-color: var(--secondary);
+}
+.cart-toggle::after {
+    content: attr(data-count);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 20px;
+    aspect-ratio: 1;
+    background-color: var(--accent-dark);
+    color: #FFF;
+    border-radius: 100%;
+    line-height: 20px;
+}
+.fa-basket-shopping {
+    color: #FFF;
+    font-size: 2rem;
+}
+
+.loader {
+    position: fixed;
+    top: 40vh;
+    left: 50vw;
+    width: 100px;
+    aspect-ratio: 1;
+    transform: translate(-50%);
+    box-shadow: 0px 25px 25px var(--primary), 0px -25px 25px var(--accent);
+    border-radius: 100%;
+    animation: spin 1s infinite linear;
+}
+
+
+@keyframes spin {
+    to {
+        transform: translate(-50%) rotate(360deg);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--accent);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-dark);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-light);
 }
