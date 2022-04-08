@@ -108,7 +108,7 @@
     background-color: var(--secondary);
     transition: 400ms;
 }
-.cart-toggle::after {
+.show-count::after {
     content: attr(data-count);
     position: absolute;
     top: 0;
@@ -121,10 +121,48 @@
     border-radius: 100%;
     line-height: 20px;
 }
-.fa-basket-shopping {
+.fa-solid {
     color: #FFF;
     font-size: 2rem;
 }
+
+.cart {
+    width: 100%;
+    padding: 5% 10%;
+}
+.cart > h3 {
+    text-align: right;
+}
+.cart-item-list {
+    display: flex;
+    flex-direction: column;
+    margin: 4vh 0;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.cart-item h4 {
+    width: 40%;
+}
+.cart-item span {
+    width: 20%;
+    height: 100%;
+    text-align: right;
+}
+.cart-item button {
+    width: 25px;
+    aspect-ratio: 1;
+    background-color: var(--accent-dark);
+    color: #FFF;
+    border-radius: 100%;
+}
+.cart-item button i {
+    font-size: 0.8rem;
+}
+
 
 .overlay {
     position: fixed;
@@ -166,6 +204,7 @@
     padding: 7px;
     background-color: transparent;
     border-radius: 7px;
+    cursor: pointer;
 }
 .modal button:first-of-type {
     background-color: var(--primary);
@@ -183,7 +222,7 @@
     transform: translate(-50%);
     box-shadow: 0px 25px 25px var(--primary), 0px -25px 25px var(--accent);
     border-radius: 100%;
-    animation: spin 1s infinite linear;
+    animation: spin 800ms infinite linear;
     z-index: 1;
 }
 
@@ -194,6 +233,10 @@
     .fruit-item {
         width: 20vw;
     }
+    .modal {
+        width: clamp(30%, 320px, 480px);
+        padding: 3%;
+    }
 }
 
 @keyframes spin {
@@ -203,7 +246,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
     background-color: var(--accent);
 }
 
