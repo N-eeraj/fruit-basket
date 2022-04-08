@@ -12,7 +12,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    border: 0;
+    border: none;
+    outline: none;
 }
 
 #app {
@@ -33,16 +34,17 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 5vh 5vw;
+    gap: 5vmax 5vmin;
     margin-top: 10vh;
-    padding: 0 15%;
+    padding: 0 5%;
 }
 
 .fruit-item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 200px;
+    width: 150px;
+    aspect-ratio: 0.75;
     background-color: #FFF;
     box-shadow: 0 3px 5px #0007;
     border-radius: 7px;
@@ -98,11 +100,13 @@
     aspect-ratio: 1;
     box-sizing: border-box;
     background-color: var(--primary);
+    box-shadow: 0 0 10px 3px #0005;
     border-radius: 100%;
     cursor: pointer;
 }
 .cart-toggle:hover {
     background-color: var(--secondary);
+    transition: 400ms;
 }
 .cart-toggle::after {
     content: attr(data-count);
@@ -122,6 +126,54 @@
     font-size: 2rem;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0007;
+    backdrop-filter: blur(3px);
+    z-index: 2;
+}
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    aspect-ratio: 1.8;
+    padding: 10% 0;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+.modal input {
+    width: 70%;
+    padding: 5px 10px;
+    border: 1px solid var(--primary);
+    border-radius: 3px;
+}
+.modal div {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+.modal button {
+    width: 40%;
+    padding: 7px;
+    background-color: transparent;
+    border-radius: 7px;
+}
+.modal button:first-of-type {
+    background-color: var(--primary);
+}
+.modal button:last-of-type {
+    border: 1px solid var(--accent-dark);
+}
+
 .loader {
     position: fixed;
     top: 40vh;
@@ -132,8 +184,17 @@
     box-shadow: 0px 25px 25px var(--primary), 0px -25px 25px var(--accent);
     border-radius: 100%;
     animation: spin 1s infinite linear;
+    z-index: 1;
 }
 
+@media screen and (orientation: landscape){
+    #fruit_list {
+        padding: 0 10%;
+    }
+    .fruit-item {
+        width: 20vw;
+    }
+}
 
 @keyframes spin {
     to {
