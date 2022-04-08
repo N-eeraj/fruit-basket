@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Kiwi",
+        "price": 450,
+        "stock": 30,
+        "image": "https://solidstarts.com/wp-content/uploads/Kiwi_edited-scaled.jpg"
+    },
+    {
+        "name": "Watermelon",
+        "price": 40,
+        "stock": 200,
+        "image": "https://solidstarts.com/wp-content/uploads/when-can-babies-eat-watermelon.jpg"
+    },
+    {
+        "name": "Cherry",
+        "price": 400,
+        "stock": 30,
+        "image": "https://www.collinsdictionary.com/images/full/cherry_159168812.jpg"
+    },
+    {
+        "name": "Apple",
+        "price": 220,
+        "stock": 80,
+        "image": "https://5.imimg.com/data5/AK/RA/MY-68428614/apple-500x500.jpg"
+    },
+    {
+        "name": "Banana",
+        "price": 70,
+        "stock": 100,
+        "image": "https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bananas-218094b-scaled.jpg"
+    },
+    {
+        "name": "Grapes",
+        "price": 60,
+        "stock": 100,
+        "image": "https://media.istockphoto.com/photos/green-grape-isolated-on-white-background-picture-id489520104?k=20&m=489520104&s=612x612&w=0&h=n1_B8jn9fb4dQibPhkXftNpjKA4Rvrjp_ttgj6sq5jY="
+    }
+]

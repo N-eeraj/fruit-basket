@@ -1,0 +1,85 @@
+:root {
+    --primary: #3C5;
+    --secondary: #0A1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    border: 0;
+}
+
+#app {
+    padding-bottom: 5vh;
+}
+
+#app > h1 {
+    margin-bottom: 7vh;
+    padding: 3vh;
+    background-color: var(--primary);
+    font-size: 2.5rem;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 1px 1px 3px #000;
+}
+
+#fruit_list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 5vh 5vw;
+    margin-top: 10vh;
+    padding: 0 15%;
+}
+
+.fruit-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    background-color: #FFF;
+    box-shadow: 0 3px 5px #0007;
+    border-radius: 7px;
+}
+.fruit-item:hover {
+    box-shadow: 0 1px 10px #0009;
+}
+.fruit-item:hover button {
+    background-color: var(--secondary);
+    color: #FFF;
+}
+
+.fruit-item img {
+    width: 100%;
+    border-radius: 7px 7px 0 0;
+}
+
+.fruit-item .item-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 10px;
+}
+
+.fruit-item .item-details span {
+    display: block;
+    padding: 5px 20px;
+}
+.fruit-item .item-details span:first-of-type {
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.fruit-item button {
+    align-self: center;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: var(--primary);
+    border-radius: 0 0 7px 7px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 400ms;
+}
